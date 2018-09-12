@@ -3,3 +3,5 @@ test_user = { "username": "qacandidate@splashthat.com",
 
 bad_user = { "username": "foobar@gmail.com",
              "password": "bazquux"}
+
+root_uri = "https://splashthat.com"
