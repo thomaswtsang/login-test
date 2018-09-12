@@ -6,13 +6,13 @@ class LoginPage(PageObject):
     password = PageElement(id_ = "password2")
     submit = PageElement(class_name = "green-button")
     
-    def fill_in_form(self):
-        # TODO abstract user input
-        self.username = "qacandidate@splashthat.com"
-        self.password = "testingislife"
+    def fill_in_form(self, **profile):
+        self.username = profile.get("username")
+        self.password = profile.get("password")
 
-    def login(self):
-        self.fill_in_form()
+    # ideally page actions are moved to a client class
+    def login(self, **profile):
+        self.fill_in_form(**profile)
         self.submit.click()
 
     def is_logged_in(self):
