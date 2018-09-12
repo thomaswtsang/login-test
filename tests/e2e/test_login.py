@@ -6,5 +6,6 @@ class TestLoginPage(object):
         LoginPageObject.login(**test_user)
         assert LoginPageObject.is_logged_in()
 
-    def test_login_failure(self):
-        pass
+    def test_login_failure(self, LoginPageObject):
+        LoginPageObject.login(**bad_user)
+        assert not LoginPageObject.is_logged_in()
