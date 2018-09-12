@@ -15,3 +15,9 @@ class TestLoginPage(object):
         LoginPageObject.load()
         assert LoginPageObject.is_logged_in()
 
+    def test_clear_cookies(self, LoginPageObject):
+        LoginPageObject.login(remember=True, **test_user)
+        LoginPageObject.clear_cookies()
+        LoginPageObject.load()
+        assert not LoginPageObject.is_logged_in()
+

@@ -28,3 +28,6 @@ class LoginPage(PageObject):
 
     def remember_login(self):
         self.remember_me.click()
+
+    def clear_cookies(self):
+        self.w.delete_all_cookies()
