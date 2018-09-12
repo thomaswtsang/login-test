@@ -5,6 +5,7 @@ class LoginPage(PageObject):
     username = PageElement(class_name = "text-input")
     password = PageElement(id_ = "password2")
     submit = PageElement(class_name = "green-button")
+    remember_me = PageElement(id_ = "remember_me")
     
     def fill_in_form(self, **profile):
         self.username = profile.get("username")
