@@ -4,8 +4,14 @@ from tests.e2e.page_objects import LoginPage
 
 
 @pytest.fixture
-def driver():
-    return webdriver.Firefox()
+def driver(request):
+    driver = webdriver.Firefox()
+    yield driver
+
+    def close_browser():
+        driver.quit()
+
+    request.addfinalizer(close_browser)
 
 @pytest.fixture()
 def LoginPageObject(driver):
