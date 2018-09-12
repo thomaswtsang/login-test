@@ -12,9 +12,16 @@ class LoginPage(PageObject):
         self.password = profile.get("password")
 
     # ideally page actions are moved to a client class
-    def login(self, **profile):
+    def login(self, remember=False, **profile):
         self.fill_in_form(**profile)
+
+        if remember:
+            self.remember_login()
+
         self.submit.click()
 
     def is_logged_in(self):
         return "events" in self.w.current_url
+
+    def remember_login(self):
+        self.remember_me.click()
