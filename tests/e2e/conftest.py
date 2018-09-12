@@ -17,5 +17,5 @@ def driver(request):
 def LoginPageObject(driver):
     # TODO abstract URI
     page = LoginPage(driver, root_uri="https://splashthat.com")
-    page.get("/login")
+    page.load()
     return page

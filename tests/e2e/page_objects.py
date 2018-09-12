@@ -7,6 +7,9 @@ class LoginPage(PageObject):
     submit = PageElement(class_name = "green-button")
     remember_me = PageElement(id_ = "remember_me")
     
+    def load(self):
+        self.get("/login")
+
     def fill_in_form(self, **profile):
         self.username = profile.get("username")
         self.password = profile.get("password")
