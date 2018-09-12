@@ -1,5 +1,6 @@
 import pytest
 from selenium import webdriver
+from tests.e2e.consts import root_uri
 from tests.e2e.page_objects import LoginPage
 
 
@@ -16,6 +17,6 @@ def driver(request):
 @pytest.fixture()
 def LoginPageObject(driver):
     # TODO abstract URI
-    page = LoginPage(driver, root_uri="https://splashthat.com")
-    page.get("/login")
+    page = LoginPage(driver, root_uri=root_uri)
+    page.load()
     return page

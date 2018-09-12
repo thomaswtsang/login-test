@@ -1,4 +1,4 @@
 env
 *pycache*
 *pytest*
-
+geckodriver.log
