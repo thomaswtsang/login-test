@@ -1,14 +1,15 @@
 from page_objects import PageObject, PageElement
 
+
 class LoginPage(PageObject):
     # username needs a more unique identifier
-    username = PageElement(class_name = "text-input")
-    password = PageElement(id_ = "password2")
-    submit = PageElement(class_name = "green-button")
-    remember_me = PageElement(id_ = "remember_me")
+    username = PageElement(class_name="text-input")
+    password = PageElement(id_="password2")
+    submit = PageElement(class_name="green-button")
+    remember_me = PageElement(id_="remember_me")
 
     url_slug = "/login"
-    
+
     def load(self):
         self.get(self.url_slug)
 

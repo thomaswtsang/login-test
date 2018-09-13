@@ -14,6 +14,7 @@ def driver(request):
 
     request.addfinalizer(close_browser)
 
+
 @pytest.fixture()
 def LoginPageObject(driver):
     # TODO abstract URI
