@@ -2,3 +2,6 @@ env
 *pycache*
 *pytest*
 geckodriver.log
+.cache
+.python-version
+*.pyc
