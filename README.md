@@ -33,3 +33,4 @@ make test
 - unit tests for frontend and backend cover input permutation (e.g., input sanitation)
 - unit tests should also cover input lengths
 - user is not locked out after multiple failed attempts
+- not checking for error dialog because unable to reset password
