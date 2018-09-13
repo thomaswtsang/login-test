@@ -1,7 +1,8 @@
 from tests.e2e.consts import test_user, bad_user
 
+
 class TestLoginPage(object):
-    
+
     def test_login_success(self, LoginPageObject):
         LoginPageObject.login(**test_user)
         assert LoginPageObject.is_logged_in()
@@ -20,4 +21,3 @@ class TestLoginPage(object):
         LoginPageObject.clear_cookies()
         LoginPageObject.load()
         assert not LoginPageObject.is_logged_in()
-
